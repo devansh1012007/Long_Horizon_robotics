@@ -1,0 +1,33 @@
+# RecoverGraph dashboard (Next.js) — production image.
+# Build from repo root:  docker build -f deploy/Dockerfile.dashboard -t rg-dashboard .
+# Telemetry socket endpoints are baked at build time (NEXT_PUBLIC_* args);
+# defaults below match deploy/nginx.conf (same-origin /socket.io/).
+FROM oven/bun:1 AS deps
+WORKDIR /app
+COPY package.json bun.lock ./
+COPY prisma ./prisma
+RUN bun install --frozen-lockfile
+
+FROM oven/bun:1 AS build
+WORKDIR /app
+ARG NEXT_PUBLIC_SOCKET_URL=/
+ARG NEXT_PUBLIC_SOCKET_PATH=/socket.io/
+ENV NEXT_PUBLIC_SOCKET_URL=$NEXT_PUBLIC_SOCKET_URL \
+    NEXT_PUBLIC_SOCKET_PATH=$NEXT_PUBLIC_SOCKET_PATH \
+    NODE_ENV=production
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN bunx prisma generate && bun run build
+
+FROM oven/bun:1 AS runtime
+WORKDIR /app
+ENV NODE_ENV=production \
+    PORT=3000 \
+    HOSTNAME=0.0.0.0
+COPY --from=build /app/.next/standalone ./
+COPY --from=build /app/node_modules/.prisma ./node_modules/.prisma
+# Run as non-root; the data volume must be writable by uid 1000.
+RUN useradd -m -u 1000 rguser && mkdir -p /app/data && chown -R rguser /app
+USER rguser
+EXPOSE 3000
+CMD ["node", "server.js"]

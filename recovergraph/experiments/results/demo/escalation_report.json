@@ -1,0 +1,9 @@
+{
+  "failure_reason": "Grasp missed the object (p=0.91)",
+  "evidence": [
+    "gripper closed to near-zero width"
+  ],
+  "alternatives": [],
+  "stale_subgoals": [],
+  "why_escalating": "all safe options exceed autonomy risk threshold"
+}

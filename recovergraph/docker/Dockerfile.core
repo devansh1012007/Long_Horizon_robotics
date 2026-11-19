@@ -1,0 +1,21 @@
+# Core image: pure-Python algorithms + kinematic sim (no ROS needed).
+FROM python:3.11-slim
+
+WORKDIR /workspace
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential git && rm -rf /var/lib/apt/lists/*
+
+COPY pyproject.toml README.md ./
+COPY rg_core ./rg_core
+COPY rgsim ./rgsim
+COPY systems ./systems
+COPY experiments ./experiments
+COPY tests ./tests
+COPY scripts ./scripts
+RUN pip install --no-cache-dir -e ".[dev]"
+
+# smoke: unit tests + 20-episode batch (spec Section 13 CI requirement)
+CMD ["bash", "-lc", "pytest -q && python scripts/check_ros_scaffold.py && \
+      python -m experiments.run_episodes --systems B2 RG --horizons 2 \
+      --conditions single --episodes 10 --out /tmp/smoke && \
+      python -m experiments.analysis --results /tmp/smoke"]

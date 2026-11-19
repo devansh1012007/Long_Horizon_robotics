@@ -1,0 +1,93 @@
+{
+  "fault_free_success": 1.0,
+  "false_alarm_rate": 0.007371007371007371,
+  "unsafe_executions": 0,
+  "detection_manifest_conditional": 0.9848484848484849,
+  "detection_raw": {
+    "f_miss": 0.9743589743589743,
+    "f_slip": 1.0,
+    "f_pose": 0.9545454545454546,
+    "f_collision": 0.7777777777777778,
+    "f_perception": 0.825,
+    "f_controller": 0.95,
+    "stale_dependency": 0.825
+  },
+  "detection_per_fault": {
+    "f_miss": {
+      "total": 39,
+      "manifested": 38,
+      "detected": 38,
+      "rate_manifest": 1.0,
+      "rate_raw": 0.9743589743589743
+    },
+    "f_slip": {
+      "total": 9,
+      "manifested": 9,
+      "detected": 9,
+      "rate_manifest": 1.0,
+      "rate_raw": 1.0
+    },
+    "f_pose": {
+      "total": 22,
+      "manifested": 22,
+      "detected": 21,
+      "rate_manifest": 0.9545454545454546,
+      "rate_raw": 0.9545454545454546
+    },
+    "f_collision": {
+      "total": 27,
+      "manifested": 22,
+      "detected": 21,
+      "rate_manifest": 0.9545454545454546,
+      "rate_raw": 0.7777777777777778
+    },
+    "f_perception": {
+      "total": 40,
+      "manifested": 33,
+      "detected": 33,
+      "rate_manifest": 1.0,
+      "rate_raw": 0.825
+    },
+    "f_controller": {
+      "total": 40,
+      "manifested": 38,
+      "detected": 38,
+      "rate_manifest": 1.0,
+      "rate_raw": 0.95
+    },
+    "stale_dependency": {
+      "total": 40,
+      "manifested": 33,
+      "detected": 33,
+      "rate_manifest": 1.0,
+      "rate_raw": 0.825
+    }
+  },
+  "per_system_success": {
+    "kinematic/B1": 0.575,
+    "kinematic/B2": 0.725,
+    "kinematic/B3": 0.75,
+    "kinematic/B4": 0.725,
+    "kinematic/B5": 0.925,
+    "kinematic/RG": 0.9625,
+    "mujoco/B1": 0.55,
+    "mujoco/B2": 0.7,
+    "mujoco/B3": 0.7,
+    "mujoco/B4": 0.7,
+    "mujoco/B5": 0.925,
+    "mujoco/RG": 0.925
+  },
+  "sign_agreement": 1.0,
+  "max_per_system_delta": 0.050000000000000044,
+  "n_fault_free_episodes": 200,
+  "seeds_per_fault_cell": 10,
+  "wall_time_s": 32.2,
+  "pass": {
+    "fault_free_95pct": true,
+    "fa_below_2pct": true,
+    "detection_90pct": true,
+    "directional_agreement": true,
+    "zero_unsafe": true
+  },
+  "G2_PASS": true
+}

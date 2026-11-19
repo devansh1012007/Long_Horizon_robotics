@@ -1,0 +1,61 @@
+{
+  "version": "test_split_manifest_v1",
+  "frozen_at": "2026-11-18",
+  "git_commit": "2b293ab73a5b9880e1ba8b0bf579266ccd7d528b",
+  "tag": "v1.4.0-m6-freeze",
+  "test_population": {
+    "faults": [
+      "f_miss",
+      "f_slip",
+      "f_pose",
+      "f_collision",
+      "f_perception",
+      "f_controller",
+      "stale_dependency"
+    ],
+    "horizons": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      10
+    ],
+    "episodes_per_cell": 30,
+    "base_seed": 8000,
+    "template_restriction": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "systems": [
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5",
+      "RG",
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A6"
+    ],
+    "backends": [
+      "kinematic",
+      "mujoco"
+    ],
+    "tuning": {
+      "alpha_step": 0.002,
+      "delta": 40.0,
+      "success": 0.8958333333333334,
+      "fa_rate": 0.032467532467532464,
+      "interventions": 0.006944444444444444
+    },
+    "artifact": "configs/learned_artifact_v1.json"
+  },
+  "note": "templates 15-19 are excluded from calibration/validation (splits.json); the test split is touched exactly once after this freeze. Cells where a mechanism is structurally impossible at a horizon (e.g. f_slip at h=1, which has no transport move) record uninjectable episodes; the per-cell effective N is reported with the results."
+}

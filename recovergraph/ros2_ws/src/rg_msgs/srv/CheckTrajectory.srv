@@ -1,0 +1,5 @@
+# safety_supervisor: ACCEPT/REJECT with reason (spec 6.8).
+string trajectory_json
+string held_object
+---
+rg_msgs/SafetyVerdict verdict

@@ -1,0 +1,141 @@
+{
+  "backend": "mujoco",
+  "episodes": 100,
+  "wall_time_s": 5.8,
+  "reconciliation": {
+    "n_episodes": 100,
+    "success_ros": 0.94,
+    "success_inproc": 0.97,
+    "extra_actions_ros": 1.22,
+    "extra_actions_inproc": 1.58,
+    "diag_accuracy_ros": 1.0,
+    "diag_accuracy_inproc": 0.9565217391304348,
+    "unsafe_ros": 0,
+    "unsafe_inproc": 0,
+    "vetoes_ros": 2,
+    "flags_ros": 49,
+    "dispatches_ros": 51
+  },
+  "decision_path_latency": {
+    "n": 69,
+    "p50_ms": 0.31095399981495575,
+    "p95_ms": 0.4146692001086194,
+    "max_ms": 0.42307900002924725
+  },
+  "bus_latency_ms": {
+    "/parse_instruction": {
+      "n": 1,
+      "p50_ms": 0.1308,
+      "p95_ms": 0.1308,
+      "max_ms": 0.1308
+    },
+    "/task/graph": {
+      "n": 2,
+      "p50_ms": 0.0026,
+      "p95_ms": 0.0026,
+      "max_ms": 0.0026
+    },
+    "/task/goal": {
+      "n": 1,
+      "p50_ms": 0.0996,
+      "p95_ms": 0.0996,
+      "max_ms": 0.0996
+    },
+    "/belief/state": {
+      "n": 46,
+      "p50_ms": 0.0295,
+      "p95_ms": 0.0516,
+      "max_ms": 0.3717
+    },
+    "/scene/objects": {
+      "n": 9,
+      "p50_ms": 0.1915,
+      "p95_ms": 0.5242,
+      "max_ms": 0.5242
+    },
+    "/rg_sim/truth": {
+      "n": 7,
+      "p50_ms": 0.2847,
+      "p95_ms": 0.6148,
+      "max_ms": 0.6148
+    },
+    "/joint_states": {
+      "n": 7,
+      "p50_ms": 0.1484,
+      "p95_ms": 0.1805,
+      "max_ms": 0.1805
+    },
+    "/gripper/state": {
+      "n": 7,
+      "p50_ms": 0.1499,
+      "p95_ms": 0.2064,
+      "max_ms": 0.2064
+    },
+    "/check_trajectory": {
+      "n": 4,
+      "p50_ms": 0.2058,
+      "p95_ms": 0.2223,
+      "max_ms": 0.2223
+    },
+    "/rg_sim/execute_skill": {
+      "n": 4,
+      "p50_ms": 12.6511,
+      "p95_ms": 12.7337,
+      "max_ms": 12.7337
+    },
+    "/skill/execute": {
+      "n": 4,
+      "p50_ms": 12.9701,
+      "p95_ms": 13.0744,
+      "max_ms": 13.0744
+    },
+    "/verify_effect": {
+      "n": 5,
+      "p50_ms": 0.0747,
+      "p95_ms": 0.0793,
+      "max_ms": 0.0793
+    },
+    "/recovery/decision": {
+      "n": 2,
+      "p50_ms": 0.0123,
+      "p95_ms": 0.0123,
+      "max_ms": 0.0123
+    },
+    "/diagnosis": {
+      "n": 4,
+      "p50_ms": 0.1181,
+      "p95_ms": 0.1215,
+      "max_ms": 0.1215
+    },
+    "/ledger/entry": {
+      "n": 1,
+      "p50_ms": 0.186,
+      "p95_ms": 0.186,
+      "max_ms": 0.186
+    },
+    "/reobserve": {
+      "n": 1,
+      "p50_ms": 0.2908,
+      "p95_ms": 0.2908,
+      "max_ms": 0.2908
+    }
+  },
+  "message_counts": {
+    "/safety/verdict": 1,
+    "/check_trajectory": 1,
+    "/exec/events": 1,
+    "/skill/execute": 1
+  },
+  "bag_replay": {
+    "ledger_entries": 6,
+    "diagnoses": 6,
+    "replayed": 6,
+    "identical": 6,
+    "deterministic": true
+  },
+  "safety_veto_on_message_flow": {
+    "vetoed": true,
+    "goal_aborted": true,
+    "world_untouched": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "systems": [
+    "A4"
+  ],
+  "horizons": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    10
+  ],
+  "conditions": [
+    "single"
+  ],
+  "episodes_per_cell": 30,
+  "base_seed": 8000,
+  "backend": "mujoco",
+  "pinned_faults": [
+    "f_miss",
+    "f_slip",
+    "f_pose",
+    "f_collision",
+    "f_perception",
+    "f_controller",
+    "stale_dependency"
+  ],
+  "wall_time_s": 96.1,
+  "git_commit": "886ae8d10f0f"
+}

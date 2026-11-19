@@ -1,0 +1,7 @@
+# fault_diagnoser: disambiguating probe by expected information gain.
+rg_msgs/FaultPosterior posterior
+---
+string probe_type
+string params_json
+float64 expected_information_gain
+bool probe_needed

@@ -1,0 +1,583 @@
+{
+  "version": "formal_run_archive_v1",
+  "date": "2026-11-18",
+  "frozen_tag": "v1.4.0-m6-freeze",
+  "git_commit": "886ae8d10f0f697be2c256feda56f8b6846cf2c8",
+  "splits": {
+    "seeds": [
+      8000,
+      8999
+    ],
+    "template_restriction": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "systems": [
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5",
+      "RG",
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A6"
+    ],
+    "conditions": [
+      "single"
+    ],
+    "horizons": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      10
+    ],
+    "episodes_per_cell": 30,
+    "pinned_faults": [
+      "f_miss",
+      "f_slip",
+      "f_pose",
+      "f_collision",
+      "f_perception",
+      "f_controller",
+      "stale_dependency"
+    ],
+    "backends": [
+      "kinematic",
+      "mujoco"
+    ],
+    "note": "touched exactly once, after all tuning freezes (M6)"
+  },
+  "tuning": {
+    "alpha_step": 0.002,
+    "delta": 40.0,
+    "success": 0.8958333333333334,
+    "fa_rate": 0.032467532467532464,
+    "interventions": 0.006944444444444444
+  },
+  "manifest": {
+    "version": "test_split_manifest_v1",
+    "frozen_at": "2026-11-18",
+    "git_commit": "2b293ab73a5b9880e1ba8b0bf579266ccd7d528b",
+    "tag": "v1.4.0-m6-freeze",
+    "test_population": {
+      "faults": [
+        "f_miss",
+        "f_slip",
+        "f_pose",
+        "f_collision",
+        "f_perception",
+        "f_controller",
+        "stale_dependency"
+      ],
+      "horizons": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        10
+      ],
+      "episodes_per_cell": 30,
+      "base_seed": 8000,
+      "template_restriction": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "systems": [
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "RG",
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6"
+      ],
+      "backends": [
+        "kinematic",
+        "mujoco"
+      ],
+      "tuning": {
+        "alpha_step": 0.002,
+        "delta": 40.0,
+        "success": 0.8958333333333334,
+        "fa_rate": 0.032467532467532464,
+        "interventions": 0.006944444444444444
+      },
+      "artifact": "configs/learned_artifact_v1.json"
+    },
+    "note": "templates 15-19 are excluded from calibration/validation (splits.json); the test split is touched exactly once after this freeze. Cells where a mechanism is structurally impossible at a horizon (e.g. f_slip at h=1, which has no transport move) record uninjectable episodes; the per-cell effective N is reported with the results."
+  },
+  "runs": [
+    {
+      "dir": "experiments/results/formal_kinematic",
+      "meta": {
+        "systems": [
+          "B1",
+          "B2",
+          "B3",
+          "B4",
+          "B5",
+          "RG",
+          "A1",
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "kinematic",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 108.9,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 185491456
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_B1",
+      "meta": {
+        "systems": [
+          "B1"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 81.1,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 11145216
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_B2",
+      "meta": {
+        "systems": [
+          "B2"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 104.7,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 16031744
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_B3",
+      "meta": {
+        "systems": [
+          "B3"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 93.3,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 14569472
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_B4",
+      "meta": {
+        "systems": [
+          "B4"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 90.7,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 14348288
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_B5",
+      "meta": {
+        "systems": [
+          "B5"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 99.8,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 14536704
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_RG",
+      "meta": {
+        "systems": [
+          "RG"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 96.6,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 16662528
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_A1",
+      "meta": {
+        "systems": [
+          "A1"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 96.1,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 14626816
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_A2",
+      "meta": {
+        "systems": [
+          "A2"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 98.5,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 16769024
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_A3",
+      "meta": {
+        "systems": [
+          "A3"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 101.9,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 17772544
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_A4",
+      "meta": {
+        "systems": [
+          "A4"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 96.1,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 14622720
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_A5",
+      "meta": {
+        "systems": [
+          "A5"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 94.3,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 15912960
+    },
+    {
+      "dir": "experiments/results/formal_mujoco_A6",
+      "meta": {
+        "systems": [
+          "A6"
+        ],
+        "horizons": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          10
+        ],
+        "conditions": [
+          "single"
+        ],
+        "episodes_per_cell": 30,
+        "base_seed": 8000,
+        "backend": "mujoco",
+        "pinned_faults": [
+          "f_miss",
+          "f_slip",
+          "f_pose",
+          "f_collision",
+          "f_perception",
+          "f_controller",
+          "stale_dependency"
+        ],
+        "wall_time_s": 107.3,
+        "git_commit": "886ae8d10f0f"
+      },
+      "db_bytes": 21741568
+    }
+  ],
+  "note": "test split touched once on frozen code; the label rerun after the CSV label fix re-executed the identical deterministic configuration (same seeds/templates/frozen parameters); the uninjectable pinned cells (mechanism structurally impossible for a template/horizon, e.g. f_slip without transport) are recorded as fault-free and excluded from fault-cell statistics with effective N reported."
+}

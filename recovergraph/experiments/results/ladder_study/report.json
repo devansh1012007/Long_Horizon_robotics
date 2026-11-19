@@ -1,0 +1,39 @@
+{
+  "n_episodes": 1200,
+  "systems": [
+    "B2",
+    "B3",
+    "B5",
+    "RG"
+  ],
+  "families": [
+    "comp_bin",
+    "comp_route",
+    "comp_relay",
+    "comp_revisit",
+    "comp_ordered"
+  ],
+  "subgoal_counts": [
+    2,
+    5,
+    10
+  ],
+  "success_by_system_backend": {
+    "B2/kinematic": 0.32,
+    "B3/kinematic": 0.293,
+    "B5/kinematic": 0.593,
+    "RG/kinematic": 0.86,
+    "B2/mujoco": 0.06,
+    "B3/mujoco": 0.053,
+    "B5/mujoco": 0.153,
+    "RG/mujoco": 0.307
+  },
+  "rg_mujoco_success_by_ladder_subgoals": {
+    "2": 0.62,
+    "5": 0.26,
+    "10": 0.04
+  },
+  "rg_horizon_slope": -0.06959,
+  "unsafe_total": 0,
+  "note": "LADDER-aligned distribution (inspired-by, per docs/LADDER_ADAPTER.md); not the pre-registered test split."
+}

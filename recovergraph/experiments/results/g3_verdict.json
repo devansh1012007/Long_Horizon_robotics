@@ -1,0 +1,151 @@
+{
+  "n_diagnoses_scoreable": {
+    "A5": 11355,
+    "RG": 11692
+  },
+  "macro_f1_calibrated": 0.893,
+  "macro_f1_handset": 0.908,
+  "per_class_calibrated": {
+    "f_miss": {
+      "precision": 0.963,
+      "recall": 0.995,
+      "f1": 0.979,
+      "n_truth": 1989
+    },
+    "f_slip": {
+      "precision": 0.486,
+      "recall": 0.823,
+      "f1": 0.611,
+      "n_truth": 577
+    },
+    "f_pose": {
+      "precision": 0.95,
+      "recall": 0.995,
+      "f1": 0.972,
+      "n_truth": 1634
+    },
+    "f_collision": {
+      "precision": 0.997,
+      "recall": 0.799,
+      "f1": 0.887,
+      "n_truth": 2368
+    },
+    "f_perception": {
+      "precision": 0.985,
+      "recall": 0.931,
+      "f1": 0.957,
+      "n_truth": 1689
+    },
+    "f_controller": {
+      "precision": 0.95,
+      "recall": 0.954,
+      "f1": 0.952,
+      "n_truth": 3098
+    }
+  },
+  "per_class_handset": {
+    "f_miss": {
+      "precision": 0.958,
+      "recall": 1.0,
+      "f1": 0.978,
+      "n_truth": 1987
+    },
+    "f_slip": {
+      "precision": 0.515,
+      "recall": 0.989,
+      "f1": 0.677,
+      "n_truth": 567
+    },
+    "f_pose": {
+      "precision": 0.943,
+      "recall": 0.981,
+      "f1": 0.962,
+      "n_truth": 1633
+    },
+    "f_collision": {
+      "precision": 0.981,
+      "recall": 0.83,
+      "f1": 0.899,
+      "n_truth": 2672
+    },
+    "f_perception": {
+      "precision": 0.991,
+      "recall": 0.927,
+      "f1": 0.958,
+      "n_truth": 1692
+    },
+    "f_controller": {
+      "precision": 1.0,
+      "recall": 0.95,
+      "f1": 0.975,
+      "n_truth": 3141
+    }
+  },
+  "ece_calibrated": 0.0622,
+  "ece_handset": 0.178,
+  "separability": {
+    "modal_recovery_per_fault": {
+      "f_controller": "retry_modified",
+      "f_perception": "reobserve_redetect",
+      "f_slip": "reobserve_replan",
+      "f_miss": "reobserve_replan",
+      "f_collision": "reobserve_replan",
+      "f_pose": "reobserve_retry_modified"
+    },
+    "non_separable_pairs": [
+      [
+        "f_collision",
+        "f_miss",
+        "reobserve_replan"
+      ],
+      [
+        "f_collision",
+        "f_slip",
+        "reobserve_replan"
+      ],
+      [
+        "f_miss",
+        "f_slip",
+        "reobserve_replan"
+      ]
+    ]
+  },
+  "rg_vs_b2": {
+    "n": 360,
+    "diff": 0.297,
+    "ci": [
+      0.244,
+      0.35
+    ],
+    "mcnemar_p": 0.0
+  },
+  "rg_vs_b3": {
+    "n": 360,
+    "diff": 0.225,
+    "ci": [
+      0.178,
+      0.272
+    ],
+    "mcnemar_p": 0.0
+  },
+  "unsafe_executions": 0,
+  "interventions_per_episode": 0.0058,
+  "learned": {
+    "rg_learned_success": 0.8861111111111111,
+    "a5_success": 0.8875,
+    "rg_success_ref": 0.8875,
+    "n_rows": 2160
+  },
+  "tuned": {
+    "alpha_step": 0.002,
+    "delta": 40.0
+  },
+  "pass": {
+    "macro_f1_ge_080": true,
+    "ece_below_010": true,
+    "rg_beats_b2": true,
+    "rg_beats_b3": true,
+    "zero_unsafe": true
+  },
+  "G3_PASS": true
+}

@@ -1,0 +1,6 @@
+# effect_verifier: verified state update check (spec 6.7).
+rg_msgs/LedgerEntry entry
+---
+bool verified
+float64 confidence
+string reason

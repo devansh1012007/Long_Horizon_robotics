@@ -1,0 +1,77 @@
+{
+  "version": "tuning_v2",
+  "source": "validation split",
+  "grid": [
+    {
+      "alpha_step": 0.002,
+      "delta": 40.0,
+      "success": 0.8958333333333334,
+      "fa_rate": 0.032467532467532464,
+      "interventions": 0.006944444444444444
+    },
+    {
+      "alpha_step": 0.002,
+      "delta": 60.0,
+      "success": 0.8958333333333334,
+      "fa_rate": 0.032467532467532464,
+      "interventions": 0.006944444444444444
+    },
+    {
+      "alpha_step": 0.002,
+      "delta": 80.0,
+      "success": 0.8958333333333334,
+      "fa_rate": 0.032467532467532464,
+      "interventions": 0.006944444444444444
+    },
+    {
+      "alpha_step": 0.005,
+      "delta": 40.0,
+      "success": 0.8888888888888888,
+      "fa_rate": 0.03761348897535668,
+      "interventions": 0.013888888888888888
+    },
+    {
+      "alpha_step": 0.005,
+      "delta": 60.0,
+      "success": 0.8888888888888888,
+      "fa_rate": 0.03761348897535668,
+      "interventions": 0.013888888888888888
+    },
+    {
+      "alpha_step": 0.005,
+      "delta": 80.0,
+      "success": 0.8888888888888888,
+      "fa_rate": 0.03761348897535668,
+      "interventions": 0.013888888888888888
+    },
+    {
+      "alpha_step": 0.01,
+      "delta": 40.0,
+      "success": 0.8888888888888888,
+      "fa_rate": 0.03761348897535668,
+      "interventions": 0.013888888888888888
+    },
+    {
+      "alpha_step": 0.01,
+      "delta": 60.0,
+      "success": 0.8888888888888888,
+      "fa_rate": 0.03761348897535668,
+      "interventions": 0.013888888888888888
+    },
+    {
+      "alpha_step": 0.01,
+      "delta": 80.0,
+      "success": 0.8888888888888888,
+      "fa_rate": 0.03761348897535668,
+      "interventions": 0.013888888888888888
+    }
+  ],
+  "chosen": {
+    "alpha_step": 0.002,
+    "delta": 40.0,
+    "success": 0.8958333333333334,
+    "fa_rate": 0.032467532467532464,
+    "interventions": 0.006944444444444444
+  },
+  "note": "alpha tunes the global per-step Bonferroni alpha (per-group structure retained); delta is the escalation weight"
+}

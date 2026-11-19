@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  sessions     Session[]
+  jobs         Job[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+model Job {
+  id         String       @id
+  userId     String
+  user       User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  label      String
+  spec       String
+  status     String       @default("queued")
+  progress   Int          @default(0)
+  total      Int          @default(0)
+  summary    String?
+  stats      String?
+  error      String?
+  createdAt  DateTime     @default(now())
+  finishedAt DateTime?
+  episodes   EpisodeRow[]
+
+  @@index([userId, createdAt])
+  @@index([status])
+}
+
+model EpisodeRow {
+  id             String   @id @default(cuid())
+  jobId          String
+  job            Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  userId         String
+  epId           String
+  system         String
+  condition      String
+  horizon        Int
+  seed           Int
+  fault          String
+  outcome        String
+  success        Boolean
+  extraActions    Float
+  recoveryTimeS  Float
+  diagCorrect    Int?
+  escalations    Int
+  interventions  Int
+  unsafeExec     Int
+  falseAlarms    Int
+  createdAt      DateTime @default(now())
+
+  @@index([userId, system])
+  @@index([jobId])
+  @@index([system, fault])
+}

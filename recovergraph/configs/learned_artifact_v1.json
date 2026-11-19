@@ -1,0 +1,342 @@
+{
+  "version": "learned_v1",
+  "fitted_on_dbs": [
+    "/home/z/my-project/recovergraph/experiments/results/calibration_kin/episodes.db",
+    "/home/z/my-project/recovergraph/experiments/results/calibration_mj/episodes.db",
+    "/home/z/my-project/recovergraph/experiments/results/calibration_pin_kin/episodes.db",
+    "/home/z/my-project/recovergraph/experiments/results/calibration_pin_mj/episodes.db"
+  ],
+  "prior_dbs": [
+    "/home/z/my-project/recovergraph/experiments/results/calibration_kin/episodes.db",
+    "/home/z/my-project/recovergraph/experiments/results/calibration_mj/episodes.db"
+  ],
+  "n_rows": {
+    "episodes": 3600,
+    "ledger": 72364,
+    "diagnoses": 22404,
+    "recoveries": 68701,
+    "events": 218523
+  },
+  "likelihoods": {
+    "gripper_closed_narrow": {
+      "f_none": 0.02,
+      "f_miss": 0.9624,
+      "f_slip": 0.01,
+      "f_pose": 0.01,
+      "f_collision": 0.01,
+      "f_perception": 0.01,
+      "f_controller": 0.01
+    },
+    "grip_force_drop": {
+      "f_none": 0.02,
+      "f_miss": 0.01,
+      "f_slip": 0.99,
+      "f_pose": 0.01,
+      "f_collision": 0.8272,
+      "f_perception": 0.1645,
+      "f_controller": 0.1245
+    },
+    "tracked_obj_final_pose_off": {
+      "f_none": 0.03,
+      "f_miss": 0.01,
+      "f_slip": 0.01,
+      "f_pose": 0.99,
+      "f_collision": 0.01,
+      "f_perception": 0.01,
+      "f_controller": 0.01
+    },
+    "low_visibility_ee_nominal": {
+      "f_none": 0.02,
+      "f_miss": 0.0228,
+      "f_slip": 0.0459,
+      "f_pose": 0.0177,
+      "f_collision": 0.01,
+      "f_perception": 0.8145,
+      "f_controller": 0.01
+    },
+    "controller_timeout_abort": {
+      "f_none": 0.01,
+      "f_miss": 0.01,
+      "f_slip": 0.01,
+      "f_pose": 0.01,
+      "f_collision": 0.01,
+      "f_perception": 0.01,
+      "f_controller": 0.99
+    },
+    "non_target_object_moved": {
+      "f_none": 0.01,
+      "f_miss": 0.01,
+      "f_slip": 0.01,
+      "f_pose": 0.01,
+      "f_collision": 0.6501,
+      "f_perception": 0.01,
+      "f_controller": 0.01
+    }
+  },
+  "skill_priors": {
+    "pick": {
+      "f_none": 0.0034,
+      "f_miss": 0.3014,
+      "f_slip": 0.0068,
+      "f_pose": 0.0068,
+      "f_collision": 0.0068,
+      "f_perception": 0.3801,
+      "f_controller": 0.2945
+    },
+    "move": {
+      "f_none": 0.0081,
+      "f_miss": 0.0032,
+      "f_slip": 0.0968,
+      "f_pose": 0.0242,
+      "f_collision": 0.5081,
+      "f_perception": 0.0484,
+      "f_controller": 0.3113
+    },
+    "place": {
+      "f_none": 0.0064,
+      "f_miss": 0.0321,
+      "f_slip": 0.0192,
+      "f_pose": 0.3077,
+      "f_collision": 0.0192,
+      "f_perception": 0.1923,
+      "f_controller": 0.4231
+    }
+  },
+  "pfail": {
+    "regrasp": {
+      "f_none": 0.05,
+      "f_miss": 0.99,
+      "f_slip": 0.9655,
+      "f_pose": 0.99,
+      "f_collision": 0.99,
+      "f_perception": 0.45,
+      "f_controller": 0.35
+    },
+    "reobserve_retry_modified": {
+      "f_none": 0.08,
+      "f_miss": 0.99,
+      "f_slip": 0.18,
+      "f_pose": 0.99,
+      "f_collision": 0.9773,
+      "f_perception": 0.4,
+      "f_controller": 0.25
+    },
+    "retry_modified": {
+      "f_none": 0.99,
+      "f_miss": 0.6,
+      "f_slip": 0.99,
+      "f_pose": 0.9286,
+      "f_collision": 0.99,
+      "f_perception": 0.6,
+      "f_controller": 0.99
+    },
+    "reobserve_redetect": {
+      "f_none": 0.96,
+      "f_miss": 0.9714,
+      "f_slip": 0.9524,
+      "f_pose": 0.6,
+      "f_collision": 0.99,
+      "f_perception": 0.9895,
+      "f_controller": 0.99
+    },
+    "correction_move": {
+      "f_none": 0.2,
+      "f_miss": 0.7,
+      "f_slip": 0.9796,
+      "f_pose": 0.99,
+      "f_collision": 0.9167,
+      "f_perception": 0.65,
+      "f_controller": 0.9615
+    },
+    "regrasp_replace": {
+      "f_none": 0.08,
+      "f_miss": 0.18,
+      "f_slip": 0.18,
+      "f_pose": 0.12,
+      "f_collision": 0.4,
+      "f_perception": 0.5,
+      "f_controller": 0.4
+    },
+    "reobserve_replan": {
+      "f_none": 0.99,
+      "f_miss": 0.99,
+      "f_slip": 0.9828,
+      "f_pose": 0.99,
+      "f_collision": 0.99,
+      "f_perception": 0.9286,
+      "f_controller": 0.99
+    },
+    "rollback": {
+      "f_none": 0.15,
+      "f_miss": 0.3,
+      "f_slip": 0.22,
+      "f_pose": 0.25,
+      "f_collision": 0.45,
+      "f_perception": 0.6,
+      "f_controller": 0.45
+    },
+    "replan_motion": {
+      "f_none": 0.9881,
+      "f_miss": 0.55,
+      "f_slip": 0.45,
+      "f_pose": 0.9333,
+      "f_collision": 0.99,
+      "f_perception": 0.55,
+      "f_controller": 0.9615
+    }
+  },
+  "forward_params": {
+    "p_grasp": 0.9854,
+    "p_slip": null,
+    "n_pick_events": 7663,
+    "n_slip_events": 0
+  },
+  "fit_meta": {
+    "likelihoods": {
+      "min_count": 15,
+      "fault_rows": {
+        "f_miss": 1622,
+        "f_collision": 1167,
+        "f_controller": 1966,
+        "f_perception": 1998,
+        "f_pose": 1016,
+        "f_slip": 368
+      },
+      "fallback_faults": [
+        "f_none"
+      ]
+    },
+    "priors": {
+      "pseudo_counts": 5.0,
+      "counts": {
+        "pick": {
+          "f_miss": 20,
+          "f_perception": 27,
+          "f_controller": 21,
+          "f_none": 0,
+          "f_slip": 0,
+          "f_pose": 0,
+          "f_collision": 0
+        },
+        "move": {
+          "f_controller": 9,
+          "f_collision": 15,
+          "f_perception": 1,
+          "f_slip": 1,
+          "f_none": 0,
+          "f_miss": 0,
+          "f_pose": 0
+        },
+        "place": {
+          "f_perception": 7,
+          "f_controller": 16,
+          "f_pose": 10,
+          "f_miss": 1,
+          "f_none": 0,
+          "f_slip": 0,
+          "f_collision": 0
+        }
+      }
+    },
+    "pfail": {
+      "min_count": 10,
+      "counts": {
+        "retry_modified": {
+          "f_controller": 663,
+          "f_collision": 1122,
+          "f_none": 184,
+          "f_slip": 140,
+          "f_pose": 12,
+          "f_miss": 0,
+          "f_perception": 0
+        },
+        "reobserve_redetect": {
+          "f_controller": 632,
+          "f_perception": 93,
+          "f_miss": 33,
+          "f_collision": 1131,
+          "f_none": 23,
+          "f_slip": 19,
+          "f_pose": 2
+        },
+        "reobserve_replan": {
+          "f_controller": 608,
+          "f_collision": 1938,
+          "f_none": 114,
+          "f_pose": 316,
+          "f_miss": 121,
+          "f_slip": 56,
+          "f_perception": 12
+        },
+        "correction_move": {
+          "f_pose": 228,
+          "f_controller": 24,
+          "f_slip": 47,
+          "f_collision": 10,
+          "f_none": 0,
+          "f_miss": 0,
+          "f_perception": 0
+        },
+        "regrasp": {
+          "f_collision": 279,
+          "f_miss": 121,
+          "f_pose": 166,
+          "f_none": 1,
+          "f_slip": 27,
+          "f_perception": 2,
+          "f_controller": 0
+        },
+        "replan_motion": {
+          "f_collision": 370,
+          "f_none": 82,
+          "f_pose": 13,
+          "f_perception": 4,
+          "f_slip": 6,
+          "f_controller": 24,
+          "f_miss": 1
+        },
+        "reobserve_retry_modified": {
+          "f_pose": 371,
+          "f_miss": 282,
+          "f_collision": 42,
+          "f_none": 4,
+          "f_perception": 2,
+          "f_slip": 0,
+          "f_controller": 0
+        },
+        "regrasp_replace": {
+          "f_none": 0,
+          "f_miss": 0,
+          "f_slip": 0,
+          "f_pose": 0,
+          "f_collision": 0,
+          "f_perception": 0,
+          "f_controller": 0
+        },
+        "rollback": {
+          "f_none": 0,
+          "f_miss": 0,
+          "f_slip": 0,
+          "f_pose": 0,
+          "f_collision": 0,
+          "f_perception": 0,
+          "f_controller": 0
+        }
+      },
+      "recoveries_with_sparse_cells": [
+        "correction_move",
+        "regrasp",
+        "regrasp_replace",
+        "reobserve_redetect",
+        "reobserve_retry_modified",
+        "replan_motion",
+        "retry_modified",
+        "rollback"
+      ]
+    }
+  },
+  "sensitivity_vs_handset": {
+    "max_abs_delta": 0.5272,
+    "mean_abs_delta": 0.06732
+  }
+}

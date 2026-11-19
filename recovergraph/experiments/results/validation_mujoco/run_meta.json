@@ -1,0 +1,29 @@
+{
+  "systems": [
+    "B2",
+    "B3",
+    "RG",
+    "A1",
+    "A2",
+    "A3",
+    "A4"
+  ],
+  "horizons": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    10
+  ],
+  "conditions": [
+    "single",
+    "none"
+  ],
+  "episodes_per_cell": 30,
+  "base_seed": 4000,
+  "backend": "mujoco",
+  "pinned_faults": null,
+  "wall_time_s": 191.7,
+  "git_commit": "c7685ceb161e"
+}

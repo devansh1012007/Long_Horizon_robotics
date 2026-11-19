@@ -1,0 +1,26 @@
+# ROS 2 Jazzy image: builds ros2_ws and brings up the RecoverGraph nodes.
+# Build:  docker build -f docker/Dockerfile.ros -t recovergraph-ros .
+# Run:    docker run --rm -it recovergraph-ros
+#         (inside) ros2 launch rg_sim bringup.launch.py
+FROM ros:jazzy-ros-base
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        python3-pip python3-pytest colcon-core ros-jazzy-ament-cmake \
+        ros-jazzy-rosidl-default-generators ros-jazzy-rosidl-default-runtime \
+        && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+COPY . /workspace/recovergraph
+RUN pip3 install --break-system-packages /workspace/recovergraph
+
+# build the interface + node packages
+RUN . /opt/ros/jazzy/setup.sh && \
+    cd /workspace/recovergraph/ros2_ws && \
+    colcon build --symlink-install && \
+    . install/setup.sh && \
+    ros2 pkg list | grep -E "^rg_(msgs|task|exec|perception|recovery|sim)$"
+
+CMD ["bash", "-c", ". /opt/ros/jazzy/setup.sh && \
+      . /workspace/recovergraph/ros2_ws/install/setup.sh && \
+      ros2 launch rg_sim bringup.launch.py"]

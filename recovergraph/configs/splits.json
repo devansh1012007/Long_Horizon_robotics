@@ -1,0 +1,36 @@
+{
+  "version": "splits_v1",
+  "defined": "2026-11-18",
+  "note": "Split separation per pre-registration section 3: calibration fits forward models and likelihood tables (never scored); validation tunes divergence alpha, cost weights and escalation thresholds (never scored); test is the held-out seed range with held-out templates 15-19, touched exactly once in M6.",
+  "calibration": {
+    "seeds": [2000, 2499],
+    "systems": ["RG"],
+    "conditions": ["none", "single"],
+    "horizons": [1, 2, 3, 5],
+    "episodes_per_cell": 40,
+    "backends": ["kinematic", "mujoco"]
+  },
+  "validation": {
+    "seeds": [4000, 4029],
+    "systems": ["B2", "B3", "RG", "A1", "A2", "A3", "A4", "A5", "RG-LEARNED"],
+    "conditions": ["single", "none"],
+    "horizons": [1, 2, 3, 5, 7, 10],
+    "episodes_per_cell": 30,
+    "backends": ["kinematic", "mujoco"],
+    "tuning_grid": {
+      "alpha_step": [0.002, 0.005, 0.01],
+      "delta": [40, 60, 80]
+    }
+  },
+  "test": {
+    "seeds": [8000, 8999],
+    "template_restriction": [15, 16, 17, 18, 19],
+    "systems": ["B1", "B2", "B3", "B4", "B5", "RG", "A1", "A2", "A3", "A4", "A5", "A6"],
+    "conditions": ["single"],
+    "horizons": [1, 2, 3, 5, 7, 10],
+    "episodes_per_cell": 30,
+    "pinned_faults": ["f_miss", "f_slip", "f_pose", "f_collision", "f_perception", "f_controller", "stale_dependency"],
+    "backends": ["kinematic", "mujoco"],
+    "note": "touched exactly once, after all tuning freezes (M6)"
+  }
+}

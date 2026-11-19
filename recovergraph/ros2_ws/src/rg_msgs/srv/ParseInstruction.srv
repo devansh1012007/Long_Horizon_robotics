@@ -1,0 +1,5 @@
+# task_parser: language -> task graph (LLM-free v1, spec Section 1 out-of-scope note).
+string instruction
+---
+rg_msgs/TaskGraphMsg graph
+string error

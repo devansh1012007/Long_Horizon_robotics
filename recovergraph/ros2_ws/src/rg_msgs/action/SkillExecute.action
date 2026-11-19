@@ -1,0 +1,13 @@
+# skill_executor (spec Section 7): long skills use actions with feedback.
+string episode_id
+string skill
+string args_json
+string params_json
+---
+bool success
+string status
+string telemetry_json
+string effects_json
+---
+float32 progress
+string phase

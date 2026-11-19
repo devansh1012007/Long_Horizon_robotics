@@ -1,0 +1,21 @@
+{
+  "systems": [
+    "RG"
+  ],
+  "horizons": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "conditions": [
+    "single",
+    "none"
+  ],
+  "episodes_per_cell": 50,
+  "base_seed": 2000,
+  "backend": "mujoco",
+  "pinned_faults": null,
+  "wall_time_s": 14.9,
+  "git_commit": "c7685ceb161e"
+}

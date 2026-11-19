@@ -1,0 +1,29 @@
+{
+  "systems": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "RG",
+    "A1",
+    "A2",
+    "A3",
+    "A4"
+  ],
+  "horizons": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "conditions": [
+    "single",
+    "none",
+    "compound"
+  ],
+  "episodes_per_cell": 12,
+  "base_seed": 1000,
+  "wall_time_s": 4.8,
+  "git_commit": "milestone-1"
+}

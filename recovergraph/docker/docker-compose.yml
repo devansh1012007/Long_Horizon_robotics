@@ -1,0 +1,29 @@
+# RecoverGraph compose (spec Section 13: parallel batch runs + ROS bringup).
+services:
+  experiments:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.core
+    volumes:
+      - ../experiments/results:/workspace/experiments/results
+    profiles: ["core"]
+
+  smoke:
+    image: recovergraph-core
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.core
+    command: >
+      python -m experiments.run_episodes --systems B1 B2 B3 B4 B5 RG
+      --horizons 1 2 3 --conditions single none compound
+      --episodes 30 --out experiments/results/compose-smoke
+    volumes:
+      - ../experiments/results:/workspace/experiments/results
+    profiles: ["core"]
+
+  ros:
+    image: recovergraph-ros
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.ros
+    profiles: ["ros"]

@@ -1,0 +1,46 @@
+{
+  "n_rows": {
+    "episodes": 3600,
+    "ledger": 72364,
+    "diagnoses": 22404,
+    "recoveries": 68701,
+    "events": 218523
+  },
+  "sensitivity_vs_handset": {
+    "max_abs_delta": 0.5272,
+    "mean_abs_delta": 0.06732
+  },
+  "likelihood_fit_meta": {
+    "min_count": 15,
+    "fault_rows": {
+      "f_miss": 1622,
+      "f_collision": 1167,
+      "f_controller": 1966,
+      "f_perception": 1998,
+      "f_pose": 1016,
+      "f_slip": 368
+    },
+    "fallback_faults": [
+      "f_none"
+    ]
+  },
+  "pfail_fit_meta": {
+    "min_count": 10,
+    "recoveries_with_sparse_cells": [
+      "correction_move",
+      "regrasp",
+      "regrasp_replace",
+      "reobserve_redetect",
+      "reobserve_retry_modified",
+      "replan_motion",
+      "retry_modified",
+      "rollback"
+    ]
+  },
+  "forward_params": {
+    "p_grasp": 0.9854,
+    "p_slip": null,
+    "n_pick_events": 7663,
+    "n_slip_events": 0
+  }
+}

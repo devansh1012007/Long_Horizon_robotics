@@ -1,0 +1,10 @@
+# recovery_planner: execute the chosen recovery macro.
+string episode_id
+rg_msgs/RecoveryDecisionMsg decision
+---
+bool success
+string new_diagnosis_json
+string restored_subgoals_json
+---
+float32 progress
+string phase

@@ -1,0 +1,5 @@
+# scene_observer: re-observe, optionally from a hinted viewpoint (spec 6.3).
+string viewpoint_hint
+---
+rg_msgs/ObjectEstimateArray scene
+bool success

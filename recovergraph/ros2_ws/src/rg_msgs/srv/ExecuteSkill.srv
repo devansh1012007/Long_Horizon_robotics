@@ -1,0 +1,9 @@
+# sim bridge / motion backend: execute one skill step.
+string episode_id
+string skill
+string args_json
+string params_json
+---
+bool success
+string status
+string telemetry_json

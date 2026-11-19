@@ -1,0 +1,11 @@
+# RecoverGraph engine service — production dependencies
+# Install: pip install -r requirements.txt
+fastapi>=0.110
+uvicorn>=0.29
+python-socketio>=5.11
+numpy>=1.26
+scipy>=1.11
+
+# Physics backend (optional, validated by the M2/M3 formal runs):
+#   pip install mujoco>=3.1
+# The engine exposes backend="mujoco" jobs only when mujoco is importable.

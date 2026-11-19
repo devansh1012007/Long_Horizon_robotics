@@ -1,0 +1,8 @@
+# task_planner: stale set in, patched graph out (spec 6.5).
+string[] stale_subgoals
+string[] corrupted_vars
+rg_msgs/TaskGraphMsg current_graph
+---
+rg_msgs/TaskGraphMsg patched_graph
+bool success
+string error

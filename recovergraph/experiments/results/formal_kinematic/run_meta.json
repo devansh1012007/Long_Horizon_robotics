@@ -1,0 +1,41 @@
+{
+  "systems": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "RG",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+  ],
+  "horizons": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    10
+  ],
+  "conditions": [
+    "single"
+  ],
+  "episodes_per_cell": 30,
+  "base_seed": 8000,
+  "backend": "kinematic",
+  "pinned_faults": [
+    "f_miss",
+    "f_slip",
+    "f_pose",
+    "f_collision",
+    "f_perception",
+    "f_controller",
+    "stale_dependency"
+  ],
+  "wall_time_s": 108.9,
+  "git_commit": "886ae8d10f0f"
+}
