@@ -16,7 +16,9 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: |
-          pip install -r engine/requirements.txt mujoco
+          pip install -r engine/requirements.txt mujoco httpx
+          # Research core deps + pytest (dev extra); also makes rg_core/rgsim importable.
+          pip install -e "recovergraph[dev]"
       - name: Engine service tests
         run: python3 -m pytest engine/tests -q
       - name: RecoverGraph core tests

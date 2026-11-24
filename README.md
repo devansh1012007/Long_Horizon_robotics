@@ -74,8 +74,11 @@ Prerequisites: Python 3.11+, [Bun](https://bun.sh) (or Node 20+), curl.
 make install                 # bun install + prisma generate
 make db                      # creates data/dashboard.db (SQLite)
 
-# 2. python deps for the engine + research core
-pip install -r engine/requirements.txt mujoco   # mujoco optional
+# 2. python deps for the engine + research core (mujoco optional)
+pip install -r engine/requirements.txt mujoco
+
+# 2b. test deps (pytest, httpx for FastAPI's TestClient, research core extras)
+pip install -e "recovergraph[dev]" httpx
 
 # 3. run everything
 make dev                     # dashboard :3000, auto-spawns engine sidecar :3031
